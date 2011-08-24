@@ -48,10 +48,11 @@ class NotificationCenter(object):
 
     __metaclass__ = Singleton
 
-    def __init__(self):
+    def __init__(self, isDebug=False):
         self.notifications = {}
         self.observerKeys = {}
-
+        self.debug = isDebug
+    
     def addObserver(self, observer, method, notificationName, observedObject=None):
         if not self.notifications.has_key(notificationName):
             self.notifications[notificationName] = {}
@@ -83,6 +84,8 @@ class NotificationCenter(object):
                     self.notifications.pop(observerKey[0])
 
     def postNotification(self, notificationName, notifyingObject, userInfo=None):
+        if self.debug:
+            print "NotificationCenter: %s posted" % notificationName
         try:
             notificationDict = self.notifications[notificationName]
         except KeyError:
