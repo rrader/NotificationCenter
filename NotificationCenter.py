@@ -29,6 +29,9 @@
 # (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 # OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+# Modifications:
+# (c) 2011, Roman Rader (Antigluk). https://github.com/antigluk/NotificationCenter/
+
 """
 Python implementation of Cocoa NSNotificationCenter
 
