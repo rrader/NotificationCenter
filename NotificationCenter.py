@@ -33,11 +33,13 @@
 # (c) 2011, Roman Rader (Antigluk). https://github.com/antigluk/NotificationCenter/
 
 """
-Python implementation of Cocoa NSNotificationCenter
+
+Contains python implementation of Cocoa NSNotificationCenter
 
 """
 
 class Singleton(type):
+    "It's just a metaclass of singleton"
     def __init__(cls, name, bases, dic):
         super(Singleton, cls).__init__(name, bases, dic)
         cls.instance = None
@@ -48,7 +50,7 @@ class Singleton(type):
         return cls.instance
 
 class NotificationCenter(object):
-
+    "Python implementation of Cocoa NSNotificationCenter"
     __metaclass__ = Singleton
 
     def __init__(self, isDebug=False):
